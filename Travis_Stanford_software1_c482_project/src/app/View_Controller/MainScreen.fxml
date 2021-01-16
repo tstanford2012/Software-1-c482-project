@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.View_Controller.MainScreenController">
+   <children>
+      <AnchorPane prefHeight="420.0" prefWidth="1200.0">
+         <children>
+            <AnchorPane layoutX="24.0" layoutY="124.0" prefHeight="222.0" prefWidth="560.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+               <children>
+                  <Label layoutX="27.0" layoutY="23.0" text="Parts">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="searchBtnPartsMain" layoutX="320.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchHandler" prefHeight="25.0" prefWidth="59.0" text="Search" />
+                  <TextField fx:id="searchBarPartsText" layoutX="389.0" layoutY="19.0" />
+                  <TableView fx:id="partsTableView" layoutX="14.0" layoutY="54.0" prefHeight="114.0" prefWidth="523.0">
+                    <columns>
+                      <TableColumn fx:id="tblPartID" prefWidth="119.0" text="Part ID">
+                              <cellValueFactory>
+                                      <PropertyValueFactory property="partID" />
+                              </cellValueFactory>
+                      </TableColumn>
+
+                      <TableColumn fx:id="tblPartName" prefWidth="110.0" text="Part Name">
+                         <cellValueFactory>
+                            <PropertyValueFactory property="partName" />
+                         </cellValueFactory>
+                      </TableColumn>
+                        <TableColumn fx:id="tblPartStock" prefWidth="143.0" text="Inventory Level">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="partStock" />
+                           </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tblPartPrice" prefWidth="150.0" text="Price">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="partPrice" />
+                           </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                  </TableView>
+                  <Button fx:id="addBtnPartsMain" layoutX="268.0" layoutY="174.0" mnemonicParsing="false" onAction="#addBtnHandler" prefHeight="25.0" prefWidth="59.0" text="Add" />
+                  <Button fx:id="modifyBtnPartsMain" layoutX="338.0" layoutY="174.0" mnemonicParsing="false" onAction="#modBtnHandler" prefHeight="25.0" prefWidth="59.0" text="Modify" />
+                  <Button fx:id="deleteBtnPartsMain" layoutX="407.0" layoutY="174.0" mnemonicParsing="false" onAction="#deleteBtnHandler" prefHeight="25.0" prefWidth="59.0" text="Delete" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="32.0" layoutY="58.0" text="Inventory Management System" textFill="#0e3694">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="prodTblView" layoutX="614.0" layoutY="124.0" prefHeight="222.0" prefWidth="560.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+               <children>
+                  <Label layoutX="27.0" layoutY="23.0" text="Products">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="searchBtnProdMain" layoutX="320.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchHandler1" prefHeight="25.0" prefWidth="59.0" text="Search" />
+                  <TextField fx:id="searchBarProdText" layoutX="389.0" layoutY="19.0" />
+                  <TableView fx:id="prodTableView" layoutX="14.0" layoutY="54.0" prefHeight="114.0" prefWidth="523.0">
+                     <columns>
+                        <TableColumn fx:id="tblProdID" prefWidth="134.0" text="Product ID">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="prodID" />
+                           </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tblProdName" prefWidth="129.0" text="Product Name">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="prodName" />
+                           </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tblProdStock" prefWidth="128.0" text="Inventory Level">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="prodStock" />
+                           </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tblProdPrice" prefWidth="131.0" text="Price">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="prodPrice" />
+                           </cellValueFactory>
+                        </TableColumn>
+                     </columns>
+                  </TableView>
+                  <Button fx:id="addBtnPartsMain1" layoutX="268.0" layoutY="174.0" mnemonicParsing="false" onAction="#addBtnHandler1" prefHeight="25.0" prefWidth="59.0" text="Add" />
+                  <Button fx:id="modifyBtnPartsMain1" layoutX="338.0" layoutY="174.0" mnemonicParsing="false" onAction="#modBtnHandler1" prefHeight="25.0" prefWidth="59.0" text="Modify" />
+                  <Button fx:id="deleteBtnPartsMain1" layoutX="407.0" layoutY="174.0" mnemonicParsing="false" onAction="#deleteBtnHandler1" prefHeight="25.0" prefWidth="59.0" text="Delete" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="exitBtn" layoutX="1023.0" layoutY="374.0" mnemonicParsing="false" onAction="#exitBtnHandler" prefHeight="25.0" prefWidth="59.0" text="Exit" />
+         </children>
+      </AnchorPane>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
